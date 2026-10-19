@@ -1,0 +1,33 @@
+[package]
+name = "ffta-ps5-core"
+version = "0.1.0"
+edition = "2021"
+description = "FFTARecomp GBA core (interpreter only) behind a small C ABI for the PS5 app"
+
+[lib]
+name = "ffta_ps5_core"
+crate-type = ["staticlib", "rlib"]
+
+# crates/ holds the emulator crates exactly as in the main project (unmodified).
+[dependencies]
+gba-core = { path = "crates/gba-core" }
+menu = { path = "crates/menu" }
+input-config = { path = "crates/input-config" }
+screen = { path = "crates/screen", default-features = false }
+
+[workspace]
+members = ["crates/armv4t", "crates/gba-core", "crates/menu"]
+resolver = "2"
+
+[workspace.package]
+version = "0.2.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+debug = false
+strip = true

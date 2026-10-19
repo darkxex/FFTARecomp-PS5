@@ -1,0 +1,10 @@
+build/
+dist/
+.deps/
+core/target/
+
+# The vendored Rust dependencies are kept whole (cargo checks every file listed in their checksums); the
+# repository's patterns for build folders and object files would drop a few of them.
+!core/vendor/**/build/
+!core/vendor/**/build/**
+!core/vendor/**/*.o

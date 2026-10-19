@@ -1,0 +1,23 @@
+FFTARecomp for PS5
+
+No ROM is included: copy your own Final Fantasy Tactics Advance (USA) dump
+(.gba) to /data/FFTARecomp/rom on the console.
+
+Built into eboot.bin:
+
+FFTARecomp GBA core (armv4t, gba-core) - MIT OR Apache-2.0, from this project
+Rust standard library and sha2 - MIT OR Apache-2.0
+
+PS5 platform layer (Vulkan presentation, audio output, controllers, /data access)
+  GNU GPL v3 or later (LICENSE-GPL-3.0.txt)
+
+RADV, Mesa's Vulkan driver for AMD GPUs (PS5 port by Mihawk-99)
+  MIT License - https://gitlab.freedesktop.org/mesa/mesa
+
+Lapy (privilege helper, lapy.elf)
+  MIT License (Lapy-MIT.txt)
+
+SDL 2 - zlib License - https://www.libsdl.org
+dlmalloc (Doug Lea) - public domain (CC0)
+DejaVu Sans Bold (notices drawn when no ROM is found) - free license (LICENSE-DejaVu.txt)
+Cinzel (Natanael Gama) and Inter (Rasmus Andersson), menu fonts - SIL OFL 1.1 (Cinzel-OFL.txt, Inter-OFL.txt)

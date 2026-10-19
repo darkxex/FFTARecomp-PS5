@@ -1,0 +1,8 @@
+[package]
+name = "screen"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Per-revision screen simulation: colorimetry, temporal response, GPU presentation"
+
+[dependencies]

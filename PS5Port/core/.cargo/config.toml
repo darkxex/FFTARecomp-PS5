@@ -1,0 +1,12 @@
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+
+[build]
+target-dir = "../build/core"
+
+# The PS5's CPU is a Zen 2: AVX2, BMI2 and the rest are there (the baseline x86-64 target uses none of them).
+[target.x86_64-ps5]
+rustflags = ["-C", "target-cpu=znver2"]

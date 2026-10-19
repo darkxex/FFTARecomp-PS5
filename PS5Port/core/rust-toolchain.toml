@@ -1,0 +1,5 @@
+# The vendored dependencies of the standard library match this nightly.
+[toolchain]
+channel = "nightly-2026-10-18"
+components = ["rust-src"]
+profile = "minimal"

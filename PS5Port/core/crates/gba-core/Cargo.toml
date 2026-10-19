@@ -1,0 +1,21 @@
+[package]
+name = "gba-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "GBA machine model: ARM7TDMI interpreter, memory map, hardware"
+
+[features]
+parallel-ppu = ["dep:rayon"]
+
+[dependencies]
+rayon = { version = "1.12", optional = true }
+armv4t = { path = "../armv4t" }
+sha2 = "0.11.0"
+
+# Host clock for the cartridge RTC, per platform. Unix uses libc's
+# localtime_r (glibc/musl/bionic/BSD — no distro assumptions); Windows uses
+# GetLocalTime. Both crates are already in the workspace lockfile.
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
